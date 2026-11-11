@@ -5,8 +5,7 @@ import Select, { type SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
 export default function SelectorUI() {
-
-    const [cityInput, setCityInput] = useState('');
+    const [cityInput, setCityInput] = useState<string>('');
 
     const handleChange = (event: SelectChangeEvent<string>) => {
         setCityInput(event.target.value);
@@ -20,12 +19,16 @@ export default function SelectorUI() {
                 id="city-simple-select"
                 label="Ciudad"
                 value={cityInput}
-                onChange={handleChange}>
-                <MenuItem disabled><em>Seleccione una ciudad</em></MenuItem>
-                <MenuItem value={'guayaquil'}>Guayaquil</MenuItem>
-                <MenuItem value={'quito'}>Quito</MenuItem>
-                <MenuItem value={'manta'}>Manta</MenuItem>
-                <MenuItem value={'cuenca'}>Cuenca</MenuItem>
+                displayEmpty
+                onChange={handleChange}
+            >
+                <MenuItem value="" disabled>
+                    <em>Seleccione una ciudad</em>
+                </MenuItem>
+                <MenuItem value="guayaquil">Guayaquil</MenuItem>
+                <MenuItem value="quito">Quito</MenuItem>
+                <MenuItem value="manta">Manta</MenuItem>
+                <MenuItem value="cuenca">Cuenca</MenuItem>
             </Select>
 
             {cityInput && (

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Grid } from '@mui/material';
 import HeaderUI from './components/HeaderUI';
 import AlertUI from './components/AlertUI';
@@ -6,7 +5,6 @@ import SelectorUI from './components/SelectorUI';
 
 
 function App() {
-    const [citySelected, setCitySelected] = useState('');
     return (
         <Grid container spacing={5} sx={{ justifyContent: 'center', alignItems: 'center' }}>
 

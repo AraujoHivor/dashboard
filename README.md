@@ -1,32 +1,30 @@
-# React + TypeScript + Vite
+# Dashboard del Clima
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Proyecto de práctica de Desarrollo de Aplicaciones Web y Móviles. El objetivo es construir un dashboard responsivo con React, TypeScript y Material UI, utilizando componentes reutilizables, props tipadas y un selector interactivo de ciudades mediante `useState`.
 
-Currently, two official plugins are available:
+## Guías desarrolladas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Guía 08:** estructura responsiva con `Grid`, encabezado y alertas con componentes MUI.
+- **Guía 09:** selección de ciudad mediante `onChange`, `handleChange` y `useState`.
 
-## React Compiler
+Las secciones de indicadores, gráfico, tabla e información adicional son marcadores de posición para actividades posteriores. No se implementa la consulta a la API en estas guías.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Ejecutar en local
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Publicar con GitHub Pages
+
+Instalar `gh-pages` (solo hace falta una vez en el proyecto):
+
+```bash
+npm install gh-pages --save-dev
+npm run deploy
+```
+
+Sitio previsto: https://AraujoHivor.github.io/dashboard/
+
+Para publicar en otro nombre de repositorio, hay que actualizar `homepage` en `package.json` y `base` en `vite.config.ts`.
